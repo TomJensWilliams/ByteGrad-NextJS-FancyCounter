@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* This should result in the same css as that provided by ByteGrad, but it makes use of CSS variables. *
+
+:root {
+  --color-background-fade-to-r: 33;
+  --color-background-fade-to-g: 41;
+  --color-background-fade-to-b: 0;
+  --color-background-fade-to: rgb(
+    var(--color-background-fade-to-r),
+    var(--color-background-fade-to-g),
+    var(--color-background-fade-to-b)
+  );
+  --color-background-fade-from-r: 56;
+  --color-background-fade-from-g: 83;
+  --color-background-fade-from-b: 0;
+  --color-background-fade-from: rgb(
+    var(--color-background-fade-from-r),
+    var(--color-background-fade-from-g),
+    var(--color-background-fade-from-b)
+  );
+  --color-card-background-normal-r: 190;
+  --color-card-background-normal-g: 242;
+  --color-card-background-normal-b: 39;
+  --color-card-background-normal: rgb(
+    var(--color-card-background-normal-r),
+    var(--color-card-background-normal-g),
+    var(--color-card-background-normal-b)
+  );
+  --color-card-background-dark-r: 163;
+  --color-card-background-dark-g: 209;
+  --color-card-background-dark-b: 27;
+  --color-card-background-dark: rgb(
+    var(--color-card-background-dark-r),
+    var(--color-card-background-dark-g),
+    var(--color-card-background-dark-b)
+  );
+  --color-count-text-r: 29;
+  --color-count-text-g: 37;
+  --color-count-text-b: 7;
+  --color-count-text: rgb(
+    var(--color-count-text-r),
+    var(--color-count-text-g),
+    var(--color-count-text-b)
+  );
+  --color-count-btn-border-r: 189;
+  --color-count-btn-border-g: 254;
+  --color-count-btn-border-b: 0;
+  --color-count-btn-border-a: 0.15;
+  --color-count-btn-border: rgb(
+    var(--color-count-btn-border-r),
+    var(--color-count-btn-border-g),
+    var(--color-count-btn-border-b),
+    var(--color-count-btn-border-a)
+  );
+  --color-count-btn-hover-r: 33;
+  --color-count-btn-hover-g: 43;
+  --color-count-btn-hover-b: 6;
+  --color-count-btn-hover: rgb(
+    var(--color-count-btn-hover-r),
+    var(--color-count-btn-hover-g),
+    var(--color-count-btn-hover-b)
+  );
+  --color-count-btn-icon-r: 189;
+  --color-count-btn-icon-g: 254;
+  --color-count-btn-icon-b: 0;
+  --color-count-btn-icon: rgb(
+    var(--color-count-btn-icon-r),
+    var(--color-count-btn-icon-g),
+    var(--color-count-btn-icon-b)
+  );
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  all: unset;
+}
+
+body {
+  font-family: Inter, sans-serif;
+  height: 100vh;
+  background-image: radial-gradient(
+    ellipse,
+    var(--color-background-fade-from),
+    var(--color-background-fade-to)
+  );
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: var(--color-card-background-normal);
+  width: 476px;
+  height: 615px;
+  border-radius: 12px;
+  box-shadow: 0 25px 121px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.4s;
+}
+
+.card--limit {
+  background-color: var(--color-card-background-dark);
+}
+
+.title {
+  opacity: 0.6;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: 200px;
+  text-align: center;
+  line-height: 0.9;
+  font-weight: 500;
+  font-size: 32px;
+  margin-top: 60px;
+}
+
+.count {
+  color: var(--color-count-text);
+  font-size: 200px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.reset-btn {
+  cursor: pointer;
+  opacity: 0.3;
+  transition: all 0.4s;
+}
+
+.reset-btn:hover,
+.reset-btn:focus {
+  opacity: 0.5;
+}
+
+.reset-btn-icon {
+  color: var(--color-count-text);
+  height: 40px;
+  width: 40px;
+}
+
+.button-container {
+  background-color: var(--color-count-text);
+  height: 116px;
+  width: 100%;
+  margin-top: auto;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  display: flex;
+}
+
+.count-btn {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.count-btn:first-child {
+  border-right: 1px solid var(--color-count-btn-border);
+}
+
+.count-btn:hover,
+.count-btn:focus {
+  background-color: var(--color-count-btn-hover);
+}
+
+.count-btn--plus {
+  border-left: 1px solid var(--color-count-btn-border);
+}
+
+.count-btn-icon {
+  color: var(--color-count-btn-icon);
+  opacity: 0.9;
+  height: 40px;
+  width: 40px;
+}
+
+@media (max-width: 680px) or (max-height: 730px) {
+  .card {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+
+  .title {
+    margin-top: 100px;
+  }
+
+  .buttons {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
